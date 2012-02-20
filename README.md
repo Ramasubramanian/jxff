@@ -1,6 +1,8 @@
 ## ABOUT
 The inbuilt Java's FileFilter and FilenameFilter does not provide capability to list files or folders dynamically based on multiple filter conditions. To achieve multiple conditions we need to code separate implementations for each combination. The purpose of this project is to provide a small utility API which can search folders recursively for matching multiple criteria with multiple combinations using lesser code. Hope it can be used in conjunction with other projects.....
 
+```java
+
 import static in.jxff.filter.criteria.Criteria.*;
 import in.jxff.filter.CriteriaMode;
 import in.jxff.filter.FileLister;
