@@ -12,11 +12,10 @@ import java.util.Date;
  * <pre>
  *		FileLister lister = FileListerFactory
 				.getFileLister("/home/testfiles");
-		lister.setRecursive(true);
-		lister.setCriteriaMode(CriteriaMode.OR);
+		lister.withMode(CriteriaMode.OR);
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");
 		Date d = sdf.parse("23/09/2010 20:00:00");
-		lister.addCriteria(new ModifiedTimeCriteria(d,Operator.GRT_THAN));
+		lister.with(changedAt(d,Operator.GRT_THAN));
 		//provide an array of files with last modified time greater than
 		// 8 PM on 23rd September 2010 from the folder and its subfolders
 		lister.listFiles();

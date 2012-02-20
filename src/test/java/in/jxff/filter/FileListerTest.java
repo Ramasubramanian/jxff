@@ -19,10 +19,6 @@ public class FileListerTest extends TestCase {
         assertEquals(7, fl.listFiles().length);
     }
 
-    public void testWithMode() {
-        fail("Not yet implemented");
-    }
-
     public void testListFolders() {
         FileLister fl = FileListerFactory.getFileLister("/home/raam/jxff_test");
         fl.with(ofName("subdir1"));

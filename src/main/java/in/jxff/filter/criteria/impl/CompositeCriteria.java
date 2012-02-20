@@ -18,17 +18,12 @@ import java.util.List;
  * from a directory, this criteria can be used as shown below
  * <pre>
  * 		FileLister lister = FileListerFactory
-				.getFileLister("/home/testfiles");
-		lister.setRecursive(true);
-		lister.setCriteriaMode(CriteriaMode.OR);
-		lister.addCriteria(new FileExtensionCriteria("doc"));
-		//Create a composite criteria
-		CompositeCriteria c = new CompositeCriteria(CriteriaMode.AND);
-		//add File size greater than zero check
-		c.addCriteria(new FileSizeCriteria(0,Operator.GRT_THAN));
-		//add an extension check for *.txt
-		c.addCriteria(new FileExtensionCriteria("txt"));
-		lister.addCriteria(c);				
+				.getFileLister("/home/testfiles").recursive(true);
+		lister.withMode(CriteriaMode.OR);
+		lister.with(withExt("doc"));
+		//Create a composite criteria with file size > 0 and extension *.txt
+		CompositeCriteria c = compose(CriteriaMode.AND,withSize(0,Operator.GRT_THAN),withExt("txt"));
+		lister.with(c);				
  * </pre>
  * @author raam
  *

@@ -6,9 +6,8 @@ package in.jxff.filter.criteria.impl;
  * <pre>
  *  	FileLister lister = FileListerFactory
 				.getFileLister("/home/testfiles");
-		lister.setRecursive(true);
-		lister.setCriteriaMode(CriteriaMode.OR);
-		lister.add(new FileExtensionCriteria("txt"));
+		lister.withMode(CriteriaMode.OR);
+		lister.with(withExt("txt"));
 		//provide an array of *.txt files from the folder and its subfolders
 		lister.listFiles();
  * </pre>

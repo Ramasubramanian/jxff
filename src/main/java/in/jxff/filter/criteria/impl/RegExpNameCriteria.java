@@ -8,10 +8,9 @@ import java.util.regex.Pattern;
  * regular expression. Usage as below:
  * <pre>
  *		FileLister lister = FileListerFactory
-				.getFileLister("/home/testfiles");
-		lister.setRecursive(true);
-		lister.setCriteriaMode(CriteriaMode.OR);
-		lister.addCriteria(new RegExpNameCriteria("a11.txt|b11.txt"));
+				.getFileLister("/home/testfiles").recursive(true);
+		lister.withMode(CriteriaMode.OR);
+		lister.with(withRegEx("a11.txt|b11.txt"));
 		//provide an array of files with names a11.txt or b11.txt
 		//from the folder and its sub folders
 		lister.listFiles();
