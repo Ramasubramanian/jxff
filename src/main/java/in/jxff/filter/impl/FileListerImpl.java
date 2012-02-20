@@ -60,9 +60,10 @@ public class FileListerImpl implements FileLister {
 	 * @seeorg.xff.filter.FileLister#addCriteria(in.jxff.filter.criteria.
 	 * FileCriteria)
 	 */
-	public void addCriteria(FileCriteria criteria) {
+	public FileLister with(FileCriteria criteria) {
 		fileCriterias.add(criteria);
 		setMod();
+		return this;
 	}
 
 	/*
@@ -160,9 +161,10 @@ public class FileListerImpl implements FileLister {
 	 * 
 	 * @see in.jxff.filter.FileLister#setRecursive(boolean)
 	 */
-	public void setRecursive(boolean recursive) {
+	public FileLister recursive(boolean recursive) {
 		this.recursive = recursive;
 		setMod();
+		return this;
 	}
 
 	/*
@@ -170,9 +172,10 @@ public class FileListerImpl implements FileLister {
 	 * 
 	 * @see in.jxff.filter.FileLister#setRootFolder(java.lang.String)
 	 */
-	public void setRootFolder(String folderName) {
+	public FileLister withRoot(String folderName) {
 		rootFolder = folderName;
 		setMod();
+		return this;
 	}
 
 	/*
@@ -190,8 +193,9 @@ public class FileListerImpl implements FileLister {
 	 * @see
 	 * in.jxff.filter.FileLister#setCriteriaMode(in.jxff.filter.CriteriaMode)
 	 */
-	public void setCriteriaMode(CriteriaMode mode) {
+	public FileLister withMode(CriteriaMode mode) {
 		this.criteriaMode = mode;
+		return this;
 	}
 
 	/**
@@ -249,8 +253,9 @@ public class FileListerImpl implements FileLister {
 	 * 
 	 * @see in.jxff.filter.FileLister#setCacheable(boolean)
 	 */
-	public void setCacheable(boolean cacheable) {
+	public FileLister cacheable(boolean cacheable) {
 		this.cacheable = cacheable;
+		return this;
 	}
 
 }

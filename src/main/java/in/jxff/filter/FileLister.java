@@ -25,7 +25,7 @@ public interface FileLister {
 	 * for files
 	 * @param criteria
 	 */
-	public void addCriteria(FileCriteria criteria);
+	public FileLister with(FileCriteria criteria);
 	
 	
 	/**
@@ -33,7 +33,7 @@ public interface FileLister {
 	 * files
 	 * @param folderName
 	 */
-	public void setRootFolder(String folderName);
+	public FileLister withRoot(String folderName);
 	
 	/**
 	 * Return the current root folder used by this lister
@@ -52,7 +52,7 @@ public interface FileLister {
 	 * Set whether this lister will search the root folder recursively or search only up to one level
 	 * @param recursive
 	 */
-	public void setRecursive(boolean recursive);
+	public FileLister recursive(boolean recursive);
 	
 	/**
 	 * Set the criteria mode as to whether the conditions for matching files
@@ -60,7 +60,7 @@ public interface FileLister {
 	 * @param mode
 	 * @see CriteriaMode 
 	 */
-	public void setCriteriaMode(CriteriaMode mode);
+	public FileLister withMode(CriteriaMode mode);
 	
 	/**
 	 * Get the Criteria mode of this lister
@@ -86,7 +86,7 @@ public interface FileLister {
 	 * sub folders
 	 * @param cacheable
 	 */
-	public void setCacheable(boolean cacheable);
+	public FileLister cacheable(boolean cacheable);
 	
 	/**
 	 * Return whether the lister caches the results of search until
