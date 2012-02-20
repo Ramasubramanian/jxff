@@ -29,12 +29,5 @@ public class FileListerTest extends TestCase {
         assertEquals(1,fl.listFolders().length);
     }
 
-    public void testIsCacheable() {
-        fail("Not yet implemented");
-    }
-
-    public void testCacheable() {
-        fail("Not yet implemented");
-    }
 
 }
