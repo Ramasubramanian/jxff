@@ -7,7 +7,7 @@ package in.jxff.filter.criteria.impl;
  *  	FileLister lister = FileListerFactory
 				.getFileLister("/home/testfiles");
 		lister.withMode(CriteriaMode.OR);
-		lister.with(withExt("txt"));
+		lister.with(extension("txt"));
 		//provide an array of *.txt files from the folder and its subfolders
 		lister.listFiles();
  * </pre>

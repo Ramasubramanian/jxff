@@ -14,7 +14,7 @@ import java.io.File;
  *		FileLister lister = FileListerFactory
 				.getFileLister("/home/testfiles");
 		lister.withMode(CriteriaMode.OR);
-		lister.with(withSize(0,Operator.GRT_THAN));
+		lister.with(size(0,Operator.GRT_THAN));
 		//provide an array of files with size greater than zero 
 		//from the folder and its subfolders
 		lister.listFiles();

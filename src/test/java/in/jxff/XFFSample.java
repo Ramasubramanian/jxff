@@ -24,17 +24,17 @@ public class XFFSample {
 		FileLister lister = FileListerFactory
 				.getFileLister("/home/raam/jxff_test");
 		lister.recursive(true).withMode(CriteriaMode.OR);//recursive mode
-		lister.with(withExt("docx"))
-		      .with(withExt("pptx"))
-		      .with(withExt("pdf")) //extensions
-		      .with(withSize(5000000, Operator.GRT_THAN))
-		      .with(ofName("a1.txt"))//file size and name
-		      .with(not(withSize(30000, Operator.EQUALS)));//negated file size
+		lister.with(extension("docx"))
+		      .with(extension("pptx"))
+		      .with(extension("pdf")) //extensions
+		      .with(size(5000000, Operator.GRT_THAN))
+		      .with(name("a1.txt"))//file size and name
+		      .with(not(size(30000, Operator.EQUALS)));//negated file size
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");
 		Date d = sdf.parse("28/09/2010 20:45:00");
 		lister.with(changedAt(d, Operator.GRT_THAN))//modified at specific time
-		      .with(compose(CriteriaMode.AND,withSize(0L, Operator.EQUALS),
-		        withExt("txt"))); //composite criteria with 0 bytes and *.txt
+		      .with(compose(CriteriaMode.AND, size(0L, Operator.EQUALS),
+		        extension("txt"))); //composite criteria with 0 bytes and *.txt
 		for (File f : lister.listFiles()) {
 			System.out.println(f);
 		}

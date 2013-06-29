@@ -12,7 +12,7 @@ import java.io.File;
  *		FileLister lister = FileListerFactory
 				.getFileLister("/home/testfiles").recursive(true);
 		lister.withMode(CriteriaMode.OR);
-		lister.with(not(withSize(0,Operator.EQUALS)));
+		lister.with(not(size(0,Operator.EQUALS)));
 		//provide an array of files with size not equal to zero
 		//from the folder and its sub folders
 		lister.listFiles();

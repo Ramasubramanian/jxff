@@ -20,9 +20,9 @@ import java.util.List;
  * 		FileLister lister = FileListerFactory
 				.getFileLister("/home/testfiles").recursive(true);
 		lister.withMode(CriteriaMode.OR);
-		lister.with(withExt("doc"));
+		lister.with(extension("doc"));
 		//Create a composite criteria with file size > 0 and extension *.txt
-		CompositeCriteria c = compose(CriteriaMode.AND,withSize(0,Operator.GRT_THAN),withExt("txt"));
+		CompositeCriteria c = compose(CriteriaMode.AND,size(0,Operator.GRT_THAN),extension("txt"));
 		lister.with(c);				
  * </pre>
  * @author raam

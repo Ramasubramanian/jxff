@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
  *		FileLister lister = FileListerFactory
 				.getFileLister("/home/testfiles").recursive(true);
 		lister.withMode(CriteriaMode.OR);
-		lister.with(withRegEx("a11.txt|b11.txt"));
+		lister.with(regEx("a11.txt|b11.txt"));
 		//provide an array of files with names a11.txt or b11.txt
 		//from the folder and its sub folders
 		lister.listFiles();

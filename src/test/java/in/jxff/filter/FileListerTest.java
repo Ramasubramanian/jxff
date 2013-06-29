@@ -13,7 +13,7 @@ public class FileListerTest extends TestCase {
 
     public void testWith() {
         FileLister fl = FileListerFactory.getFileLister("/home/raam/jxff_test");
-        fl.with(withExt("txt"));
+        fl.with(extension("txt"));
         assertEquals(4, fl.listFiles().length);
         fl.recursive(true);
         assertEquals(7, fl.listFiles().length);
@@ -21,7 +21,7 @@ public class FileListerTest extends TestCase {
 
     public void testListFolders() {
         FileLister fl = FileListerFactory.getFileLister("/home/raam/jxff_test");
-        fl.with(ofName("subdir1"));
+        fl.with(name("subdir1"));
         assertEquals(1,fl.listFolders().length);
     }
 

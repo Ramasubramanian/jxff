@@ -1,0 +1,20 @@
+-------------------------------------------------------------------------------
+Test set: in.jxff.filter.FileListerTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec <<< FAILURE!
+testWith(in.jxff.filter.FileListerTest)  Time elapsed: 0.007 sec  <<< FAILURE!
+junit.framework.AssertionFailedError: expected:<4> but was:<0>
+	at junit.framework.Assert.fail(Assert.java:47)
+	at junit.framework.Assert.failNotEquals(Assert.java:282)
+	at junit.framework.Assert.assertEquals(Assert.java:64)
+	at junit.framework.Assert.assertEquals(Assert.java:201)
+	at junit.framework.Assert.assertEquals(Assert.java:207)
+	at in.jxff.filter.FileListerTest.testWith(FileListerTest.java:17)
+testListFolders(in.jxff.filter.FileListerTest)  Time elapsed: 0.002 sec  <<< FAILURE!
+junit.framework.AssertionFailedError: expected:<1> but was:<0>
+	at junit.framework.Assert.fail(Assert.java:47)
+	at junit.framework.Assert.failNotEquals(Assert.java:282)
+	at junit.framework.Assert.assertEquals(Assert.java:64)
+	at junit.framework.Assert.assertEquals(Assert.java:201)
+	at junit.framework.Assert.assertEquals(Assert.java:207)
+	at in.jxff.filter.FileListerTest.testListFolders(FileListerTest.java:25)

@@ -4,12 +4,12 @@ import static in.jxff.filter.criteria.Criteria.changedAt;
 import static in.jxff.filter.criteria.Criteria.compose;
 import static in.jxff.filter.criteria.Criteria.compose2;
 import static in.jxff.filter.criteria.Criteria.not;
-import static in.jxff.filter.criteria.Criteria.ofName;
-import static in.jxff.filter.criteria.Criteria.ofNameNoCase;
-import static in.jxff.filter.criteria.Criteria.withExt;
-import static in.jxff.filter.criteria.Criteria.withExtNoCase;
-import static in.jxff.filter.criteria.Criteria.withRegEx;
-import static in.jxff.filter.criteria.Criteria.withSize;
+import static in.jxff.filter.criteria.Criteria.name;
+import static in.jxff.filter.criteria.Criteria.nameNoCase;
+import static in.jxff.filter.criteria.Criteria.extension;
+import static in.jxff.filter.criteria.Criteria.extNoCase;
+import static in.jxff.filter.criteria.Criteria.regEx;
+import static in.jxff.filter.criteria.Criteria.size;
 import in.jxff.filter.CriteriaMode;
 import in.jxff.filter.Operator;
 
@@ -21,15 +21,15 @@ import junit.framework.TestCase;
 public class CriteriaTest extends TestCase {
 
     public void testWithExt() {
-        Assert.assertNotNull(withExt("txt"));
+        Assert.assertNotNull(extension("txt"));
     }
 
     public void testWithExtNoCase() {
-        Assert.assertNotNull(withExtNoCase("txt"));
+        Assert.assertNotNull(extNoCase("txt"));
     }
 
     public void testWithSize() {
-        Assert.assertNotNull(withSize(1024L, Operator.EQUALS));
+        Assert.assertNotNull(size(1024L, Operator.EQUALS));
     }
 
     public void testChangedAt() {
@@ -37,28 +37,28 @@ public class CriteriaTest extends TestCase {
     }
 
     public void testOfName() {
-        Assert.assertNotNull(ofName("test.txt"));
+        Assert.assertNotNull(name("test.txt"));
     }
 
     public void testOfNameNoCase() {
-        Assert.assertNotNull(ofNameNoCase("test.txt"));
+        Assert.assertNotNull(nameNoCase("test.txt"));
     }
 
     public void testNot() {
-        Assert.assertNotNull(not(ofNameNoCase("test.txt")));
+        Assert.assertNotNull(not(nameNoCase("test.txt")));
     }
 
     public void testWithRegEx() {
-        Assert.assertNotNull(withRegEx("[0-9]+.txt"));
+        Assert.assertNotNull(regEx("[0-9]+.txt"));
     }
 
     public void testComposeCriteriaModeFileCriteriaArray() {
-        Assert.assertNotNull(compose2(CriteriaMode.OR, ofName("data"), ofName("sample")));
+        Assert.assertNotNull(compose2(CriteriaMode.OR, name("data"), name("sample")));
     }
 
     public void testComposeCriteriaModeFileNameCriteriaArray() {
         Assert.assertNotNull(compose(CriteriaMode.OR, changedAt(new Date(System.currentTimeMillis()), Operator.LESS_THAN),
-                withSize(1024L, Operator.EQUALS)));
+                size(1024L, Operator.EQUALS)));
     }
 
 }

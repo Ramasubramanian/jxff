@@ -22,15 +22,15 @@ public final class Criteria {
 
     private Criteria() {/*static usage*/}
     
-    public static FileExtensionCriteria withExt(final String extension) {
+    public static FileExtensionCriteria extension(final String extension) {
         return new FileExtensionCriteria(extension);
     }
     
-    public static FileExtensionCriteria withExtNoCase(final String extension) {
+    public static FileExtensionCriteria extNoCase(final String extension) {
         return new FileExtensionCriteria(extension,false);
     }
     
-    public static FileSizeCriteria withSize(long size, Operator op) {
+    public static FileSizeCriteria size(long size, Operator op) {
         return new FileSizeCriteria(size, op);
     }
     
@@ -38,11 +38,11 @@ public final class Criteria {
         return new ModifiedTimeCriteria(time,op);
     }
     
-    public static NameCriteria ofName(String name) {
+    public static NameCriteria name(String name) {
         return new NameCriteria(name);
     }
     
-    public static NameCriteria ofNameNoCase(String name) {
+    public static NameCriteria nameNoCase(String name) {
         return new NameCriteria(name, true);
     }
     
@@ -50,7 +50,7 @@ public final class Criteria {
         return new NegatedFileCriteria(criteria);
     }
     
-    public static RegExpNameCriteria withRegEx(String regEx) {
+    public static RegExpNameCriteria regEx(String regEx) {
         return new RegExpNameCriteria(regEx);
     }
     
